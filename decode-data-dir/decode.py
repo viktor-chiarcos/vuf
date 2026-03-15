@@ -15,7 +15,7 @@ doc=etree.parse(args.file)
 for file in doc.xpath("//file"):
 	path="/".join(file.xpath(".//ancestor-or-self::*[name()='file' or name()='dir']/@name"))
 	text="\n".join(file.xpath(".//content/text()"))
-	text= "\n".join([ zeile.lstrip() for zeile in text.split("\n")])
+	#text= "\n".join([ zeile.lstrip() for zeile in text.split("\n")])
 	print(path)
 	print(f"vuf-Datei {args.file}:\n{text}")
 	print()
