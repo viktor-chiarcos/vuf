@@ -13,3 +13,7 @@ Ein Universal-Format mit der Bezeichnung "Viktors Universal-Format"
 # Entpacken
 
     ./decode '<Dateienname>' '<Ordner>'
+
+# Benutzern Informationen geben
+
+Man kann auch Benutzerdefinierte Einstellungen anfügen. Weitere Information in der Datei [vuf.dtd](https://github.com/viktor-chiarcos/vuf/blob/main/vuf.dtd)
