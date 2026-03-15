@@ -10,7 +10,7 @@
 >
 <!ATTLIST file
 	name       CDATA #REQUIRED
-	type       CDATA "?text/plain"
+	type       CDATA "text/plain"
 >
 <!ATTLIST dir
 	name       CDATA #REQUIRED 

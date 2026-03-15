@@ -3,12 +3,14 @@
 import argparse
 import lxml.etree as etree
 from os import system as sh
-import os
+import os,base64
+
+def view(text):
+	print(text)
 
 parser = argparse.ArgumentParser(description='Fortsetzung zu decode')
 parser.add_argument('-f','--file',required=True, help='Gewählte "vuf" Datei (sollte existieren) ')
 parser.add_argument('-d','--directory',required=True, help='Gewähltes Zielverzeichnis (sollte existieren und leer sein.) von <bash $2>')
-#parser.add_argument('--value', required=True, default="[echo.v] Fehler: Argument --value erforderlich", help='Text in Anführungszeichen ("") angeben')
 args = parser.parse_args()
 
 doc=etree.parse(args.file)
@@ -23,3 +25,8 @@ for file in doc.xpath("//file"):
 	with open(f"{args.directory}/{path}","wt") as datei:
 		datei.write(text)
 print("Fertig")
+# application/octet-stream
+"""
+if text encode(utf-8):
+	view("This is UTF 8")
+"""
