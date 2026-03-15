@@ -54,6 +54,6 @@ for i in mein_inhalt:
 			text=inhalt.read()
 			node.text=text
 with open(args.file,"wt") as datei:
-	datei.write(etree.tostring(doc).decode("utf-8"))
+	datei.write(f'<?xml version="1.0"?>\n{etree.tostring(doc).decode("utf-8")}')
 
 

@@ -1,5 +1,6 @@
-<vuf version="0.1"><dir name="beispiel"><file name="test.txt"><content>
+<?xml version="1.0"?>
+<vuf version="0.1"><dir name="."><dir name="beispiel"><file name="test.txt"><content>
 Ein Test
 </content></file><dir name="test"><file name="test.txt"><content>
 Ein Test im Ordner "Test"
-</content></file></dir></dir></vuf>
+</content></file></dir></dir></dir></vuf>
