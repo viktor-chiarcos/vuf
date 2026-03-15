@@ -17,3 +17,21 @@ Ein Universal-Format mit der Bezeichnung "Viktors Universal-Format"
 # Benutzern Informationen geben
 
 Man kann auch Benutzerdefinierte Einstellungen anfügen. Weitere Information in der Datei [vuf.dtd](https://github.com/viktor-chiarcos/vuf/blob/main/vuf.dtd)
+
+Ein Beispiel:
+
+        <vuf version="0.1" name='Ein "vuf" Beispiel' labels="template;test">
+        	<file name="test.txt" type="text/plain">
+        		<content>
+        				Ein Test
+        			</content>
+        		</file>
+        		<dir name="test">
+        			<file name="test.txt" type="text/plain">
+        				<content>
+        					Ein Test im Ordner "Test"
+        				</content>
+        			</file>
+        		</dir>
+        </vuf>
+
