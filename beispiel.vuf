@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE vuf SYSTEM "vuf.dtd">
+<vuf version="0.1" name='Ein "vuf" Beispiel' labels="template;test">
+	<file name="test.txt" type="text/plain">
+		<content>
+				Ein Test
+			</content>
+		</file>
+		<dir name="test">
+			<file name="test.txt" type="text/plain">
+				<content>
+					Ein Test im Ordner "Test"
+				</content>
+			</file>
+		</dir>
+</vuf>

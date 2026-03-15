@@ -1,0 +1,17 @@
+<!ELEMENT vuf	  (file|dir)*>
+<!ELEMENT file	  (content)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT dir	  (file|dir)*>
+
+<!ATTLIST vuf
+	version    CDATA "0.1"
+	name	   CDATA #IMPLIED 
+	labels     CDATA #IMPLIED 
+>
+<!ATTLIST file
+	name       CDATA #REQUIRED
+	type       CDATA "?text/plain"
+>
+<!ATTLIST dir
+	name       CDATA #REQUIRED 
+>

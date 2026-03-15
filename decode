@@ -1,0 +1,34 @@
+#!/bin/bash
+
+MYHOME=`dirname $0`
+MYHOME=`cd $MYHOME; pwd`
+
+if echo $1 | egrep -v . >&/dev/null
+then echo -e "[ERROR 1] Datei fehlt\nVerwende `basename $0` '<Dateienname>' '<Ordner>' um die Datei zu extrahieren"
+	exit 1
+fi
+if echo $2 | egrep -v . >&/dev/null
+then echo -e "[ERROR 2] Ordner fehlt\nVerwende `basename $0` '<Dateienname>' '<Ordner>' um die Datei zu extrahieren"
+	exit 2
+fi
+if [ ! -e $1 ]
+then echo "[ERROR 3] Die gewünschte Datei existiert nicht."
+	exit 3
+fi
+if [ -e $2 ]
+then echo "[ERROR 4] Der Zielordner existiert bereits."
+	exit 4
+fi
+
+if xmllint --dtdvalid $MYHOME/vuf.dtd $1 1>&/dev/null
+then echo "Datei $1 überprüft. Weiter zum nächsten Schritt..."
+else echo "[ERROR 5] Die Datei $1 ist nicht valide. Kann nicht fortfahren"
+	exit 5
+fi
+if mkdir -p $2
+then echo "Verzeichnis $2 angelegt."
+else echo "[ERROR 6] Fehler beim Erstellen vom Ordner $2."
+	exit 6
+fi
+SYSTEM=$2 
+$MYHOME/decode-data-dir/decode.py -f $1 -d $2
