@@ -4,7 +4,6 @@ import argparse
 import lxml.etree as etree
 from os import system as sh
 import os,base64
-
 def view(text):
 	print(text)
 
@@ -22,8 +21,15 @@ for file in doc.xpath("//file"):
 	print(f"vuf-Datei {args.file}:\n{text}")
 	print()
 	sh(f"""mkdir -p {args.directory}/`dirname {path}`""")
-	with open(f"{args.directory}/{path}","wt") as datei:
-		datei.write(text)
+	#parent.attrib["type"]=f"application/octet-stream"
+	if "type" in file.attrib and file.attrib["type"]=="application/octet-stream":
+		with open(f"{args.directory}/{path}","wb") as binfile:
+			textbytes=text.encode('ascii')
+			decoded=base64.b64decode(textbytes)
+			binfile.write(decoded)
+	else:
+		with open(f"{args.directory}/{path}","wt") as datei:
+			datei.write(text)
 print("Fertig")
 # application/octet-stream
 """

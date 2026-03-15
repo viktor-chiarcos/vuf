@@ -3,7 +3,7 @@
 import argparse
 import lxml.etree as etree
 from os import system as sh
-import os
+import os,base64
 
 def view(content):
 	print(content)
@@ -49,10 +49,21 @@ for i in mein_inhalt:
 		node.append(etree.Element("file",name=path[0]))
 		node=node.xpath(f"file[@name='{path[0]}']")[0]
 		node.append(etree.Element("content"))
+		
 		node=node.xpath(f"content")[-1]		
-		with open(i,"rt") as inhalt:
-			text=inhalt.read()
-			node.text=text
+		try: 
+			with open(i,"rt") as inhalt:
+				text=inhalt.read()
+				node.text=text
+		except UnicodeDecodeError:
+			with open(i,"rb") as inhalt:
+				zeichen=inhalt.read()
+				text=base64.b64encode(zeichen)
+				node.text=text
+				parent=node.xpath("..")[0]
+				parent.attrib["type"]=f"application/octet-stream"
+
+			
 with open(args.file,"wt") as datei:
 	datei.write(f'<?xml version="1.0"?>\n{etree.tostring(doc).decode("utf-8")}')
 
