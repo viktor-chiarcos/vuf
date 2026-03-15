@@ -31,4 +31,4 @@ else echo "[ERROR 6] Fehler beim Erstellen vom Ordner $2."
 	exit 6
 fi
 SYSTEM=$2 
-$MYHOME/decode-data-dir/decode.py -f $1 -d $2
+python3 $MYHOME/decode-data-dir/decode.py -f $1 -d $2
