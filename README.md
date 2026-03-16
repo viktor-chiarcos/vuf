@@ -35,3 +35,7 @@ Ein Beispiel:
         		</dir>
         </vuf>
 
+
+# Wichtige Info
+
+Das Format **vuf** kann keine *Symbolische Links (Linux)* speichern und erzeugt stattdessen eine Datei mit dem gleichen Namen und dem gleichen Inhalt.
