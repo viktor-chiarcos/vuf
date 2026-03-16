@@ -1,7 +1,7 @@
 # vuf
 Ein Universal-Format mit der Bezeichnung "Viktors Universal-Format"\
 Lizensiert unter [GPL 3](/LICENSE)\
-Deutsche Version: [GOL 3](LICENSE.de.md)
+Deutsche Version: [GPL 3](LICENSE.de.md)
 
 # Herunterladen
 
