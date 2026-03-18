@@ -1,0 +1,11 @@
+#!/bin/bash
+
+MYHOME=`dirname $0`
+MYHOME=`cd $MYHOME; pwd`
+LESS_TERMCAP_md=$'\e[01;31m' \
+LESS_TERMCAP_me=$'\e[0m' \
+LESS_TERMCAP_us=$'\e[01;32m' \
+LESS_TERMCAP_ue=$'\e[0m' \
+LESS_TERMCAP_so=$'\e[46;30m' \
+LESS_TERMCAP_se=$'\e[0m' \
+/usr/bin/man $MYHOME/manual/vuf.1
