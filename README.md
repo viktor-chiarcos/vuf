@@ -1,5 +1,7 @@
 # vuf
-Ein Universal-Format mit der Bezeichnung "Viktors Universal-Format"
+Ein Universal-Format mit der Bezeichnung "Viktors Universal-Format"\
+Lizensiert unter [GPL 3](/LICENSE)\
+Deutsche Version: [GPL 3](LICENSE.de.md)
 
 # Herunterladen
 
